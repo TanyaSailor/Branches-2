@@ -1,3 +1,4 @@
+
 (async () => {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(position => {
@@ -6,4 +7,18 @@
             coordsEl.parentElement.classList.remove('invisible');
         });
     }
+
+(() => {
+    const earlyorderForm = document.querySelector('#earlyorder-form');
+
+    earlyorderForm.addEventListener('submit', ev => {
+        ev.preventDefault();
+
+        const earlyorderContact = earlyorderForm.querySelector('#earlyorder-contact');
+        const contact = earlyorderContact.value.trim();
+
+        if (contact === '') {
+            return;
+        }
+        
 })();
